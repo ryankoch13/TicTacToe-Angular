@@ -1,0 +1,17 @@
+<section>
+    <div id="flex">
+        <button nbButton outline status="danger" (click)="newGame()">Start new Game</button>
+        <main>
+            <app-square 
+                *ngFor="let val of squares; let i = index" 
+                [value]="val"
+                (click)="makeMove(i)"> 
+
+            </app-square>
+        </main>
+    </div>
+    <h2 *ngIf="winner">
+        {{ winner }} won the game!
+    </h2>
+    <h1>Current Player: {{ player }} </h1>
+</section>
